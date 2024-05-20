@@ -178,9 +178,25 @@ hr {
     height: 200px;
     width: 200px;
     gap: 10px;
+    font-family: 'Roboto Thin';
 }
+
+.tick-plus-button {
+    position: relative;
+    right: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 150px;   
+}
+
 
 .read {
     background: green;
+}
+
+.read + div {
+    color: green;
+    font-size: 24px;
 }
 
