@@ -40,13 +40,14 @@
     --900: #18181b;
     --950: #09090b;
     font-family:'Roboto Standard',  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
 }
 
 body {
     min-height: 100vh;
     
 }
-
+  /* ---- Header Section ---- */
 .background-image {
     background: url(images/susan-q-yin-2JIvboGLeho-unsplash.jpg);
     height: 110px;
@@ -66,10 +67,13 @@ body {
     margin-left: 50px;
 }
 
+/* ---- Main Container --- */
 .container {
     display: grid;
     grid-template-columns: 350px 3fr ;
 }
+
+/* ---- Side Bar Info Section ----  */
 
 .sidebar-info {
     display: flex;
@@ -107,6 +111,62 @@ ul {
 span {
     font-style: italic;
     text-decoration: underline;
+}
+
+/* ---- Library Section Styling ---- */
+
+.addbook-section {
+    background: var(--500);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+}
+
+img {
+    width: 70px;
+    height: 20px;
+}
+
+button {
+    border-radius: 12px;
+    padding: 3px 10px;
+    cursor: pointer;
+    border: 1px solid var(--900);
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+button:hover {
+    background: var(--400);
+}
+
+.mybooks-title {
+    font-family: 'Big Beauty';
+    color: #09090b;
+    text-align: center;
+    font-size: 40px;
+    
+}
+hr {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 0 5px;
+    margin-top: 10px;
+    
+}
+
+.books > div {
+    border: 5px solid black;
+    height: 200px;
+    width: 200px;
 }
 
 
