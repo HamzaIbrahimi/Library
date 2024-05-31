@@ -172,11 +172,11 @@ hr {
 .books > div {
     display: flex;
     flex-direction: column;
+    padding: 5px;
     align-items: center;
     border: 3px solid var(--400);
+    width: 20vw;
     border-radius: 12px;
-    height: 200px;
-    width: 200px;
     gap: 10px;
     font-family: 'Roboto Thin';
 }
