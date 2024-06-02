@@ -213,26 +213,47 @@ hr {
 #my-form input {
     font-size: 16px;
     font-family: roboto thin;
+    width: 90%;
+    padding: 5px;
+}
+
+div > label {
+    line-height: 2;
+}
+/* Remove arrow/range from input with type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #my-form h3 {
     font-family: Big Beauty;
+    font-size: 32px;
     text-align: center;
     font-style: italic;
     color: var(--700);
     margin: 10px 0;
+    padding: 5px;
     border: 2px solid;
     border-image: repeating-linear-gradient(to right,   #E70000 0px, #E70000 16.66666%,   #FF8C00 16.666666%, #FF8C00 33.333333%,   #FFEF00 33.3333333%, #FFEF00 50%,  #00811F 50%, #00811F 66.6666666%,   #0044FF 66.666666%, #0044FF 83.3333333333%,   #760089 83.333333px,#760089 100%) 1;
+}
+
+.main-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .main-form-content > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     margin-bottom: 5px ;
 }
 
 .formBtn button {
     align-self: center;
+    padding: 5px 10px;
 }
