@@ -206,8 +206,8 @@ hr {
 #dialog-box {
     padding: 5px 10px;  
     border-radius: 10px 20px;
-    top: 30%;
-    left: 50%;
+    top: 20%;
+    left: 40%;
 }
 
 #my-form > div:first-child {
