@@ -57,7 +57,7 @@
     </div>
 
     <!-- Dialog form to get input from user -->
-    <dialog id="dialog-box" open>
+    <dialog id="dialog-box">
         <form method="dialog" id="my-form">
             <div><button type="button" id="close-dialog-button">x</button></div>
             <h3>Add your new book</h3>
@@ -74,7 +74,7 @@
                     <label for="pages">No. of Pages</label>
                     <input type="number" id="pages" name="pages" min="1" max="2000" required>
                 </div>
-                <div class="formBtn"><button type="submit" form="my-form">Add Book</button></div>
+                <div class="formBtn"><button id="add-book-button" type="submit" form="my-form">Add Book</button></div>
             </div>
         </form>
     </dialog>
