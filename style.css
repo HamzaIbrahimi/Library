@@ -210,6 +210,11 @@ hr {
     left: 50%;
 }
 
+#my-form > div:first-child {
+    display: flex;
+    justify-content: end;
+}
+
 #my-form input {
     font-size: 16px;
     font-family: roboto thin;
