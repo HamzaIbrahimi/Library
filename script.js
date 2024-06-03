@@ -78,3 +78,69 @@ addBookBtn.addEventListener('click', () => {
   }
 })
 
+// ------- Getting input from dialog form -------
+
+function getInput () {
+  const title = document.querySelector('#title');
+  const author= document.querySelector('#author');
+  const pages = document.querySelector('#pages');
+
+  const newBook = new Book (title.value, author.value, pages.value);
+  addBookToLibrary(newBook);
+}
+
+form.addEventListener('submit', getInput);
+
+
+// Displaying each item in the array by creating a card div which will be appended to the books container
+function displayMyBooks () {
+  //loop through array and link new books to already styled css elements
+  for(const myBooks of myLibrary) {
+    const book = document.createElement('div');
+    book.setAttribute('class', 'card');
+    books.appendChild(book);
+    //create the new elements that are appended under the card div
+    const img = document.createElement('img');
+    img.setAttribute('src', 'logos/book-open-blank-variant-outline.svg');
+    book.appendChild(img);
+
+    const titleDiv = document.createElement('div');
+    titleDiv.setAttribute('class', 'title');
+    titleDiv.textContent = `Title: ${myBooks.title}`;
+    book.appendChild(titleDiv);
+
+    const authorDiv = document.createElement('div');
+    authorDiv.setAttribute('class', 'author');
+    authorDiv.textContent = `Title: ${myBooks.title}`;
+    book.appendChild(authorDiv);
+
+    const pagesDiv = document.createElement('div');
+    pagesDiv.setAttribute('class', 'pages');
+    pagesDiv.textContent = `Title: ${myBooks.pages}`;
+    book.appendChild(pagesDiv);
+
+    const tick$btn = document.createElement('div');
+    tick$btn.setAttribute('class', 'tick-plus-button');
+    book.appendChild(tick$btn);
+    
+    //children of tick$btn
+    const tickBtn = document.createElement('button');
+    tickBtn.setAttribute('class', 'read');
+    tickBtn.textContent = 'Read';
+    tick$btn.appendChild(tickBtn);
+
+    const tickDiv = document.createElement('div');
+    tickDiv.setAttribute('id', 'tick');
+    tickDiv.textContent = '✓';
+    tick$btn.appendChild(tickDiv);
+
+    //back to child of Book/Card
+    const BTNremove = document.createElement('button');
+    BTNremove.setAttribute('class', 'remove');
+    BTNremove.textContent = 'Remove';
+    book.appendChild(BTNremove);
+  };
+};
+
+form.addEventListener('submit', displayMyBooks)
+
