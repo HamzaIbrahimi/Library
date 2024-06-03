@@ -7,6 +7,7 @@ const tickSymbol = document.querySelectorAll('#tick');
 const myLibrary = [];
 
 
+
 //Object constructor for the Book 
 function Book (title, author, pages) {
         this.title = title;
@@ -94,6 +95,7 @@ form.addEventListener('submit', getInput);
 
 // Displaying each item in the array by creating a card div which will be appended to the books container
 function displayMyBooks () {
+  books.innerHTML = '';
   //loop through array and link new books to already styled css elements
   for(const myBooks of myLibrary) {
     const book = document.createElement('div');
