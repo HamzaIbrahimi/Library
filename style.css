@@ -262,3 +262,14 @@ input::-webkit-inner-spin-button {
     align-self: center;
     padding: 5px 10px;
 }
+
+.radio-button-container {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    padding: 0 5px;
+}
+
+.radio-button-container > div {
+    font-family: robot thin;
+}

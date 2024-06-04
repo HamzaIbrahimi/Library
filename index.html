@@ -41,23 +41,13 @@
             <hr>
 
             <div class="books">
-                <div class="card">
-                    <img src="logos/book-open-blank-variant-outline.svg" alt="">
-                    <div class="title">Title: Fight Club</div>
-                    <div class="author">Author: Chuck Palahniuk</div>
-                    <div class="pages">Pages: 208</div>
-                    <div class="tick-plus-button">
-                        <button class="read">Read</button>
-                        <div id="tick">✓</div>
-                    </div>
-                    <button class="remove">Remove</button>
-                </div>
+
             </div>
         </div>
     </div>
 
     <!-- Dialog form to get input from user -->
-    <dialog id="dialog-box">
+    <dialog id="dialog-box" open="">
         <form method="dialog" id="my-form">
             <div><button type="button" id="close-dialog-button">x</button></div>
             <h3>Add your new book</h3>
@@ -73,6 +63,19 @@
                 <div>
                     <label for="pages">No. of Pages</label>
                     <input type="number" id="pages" name="pages" min="1" max="2000" required>
+                </div>
+                <div>
+                    <label style="text-decoration: overline;"  for="readStatus">Read Status</label>
+                    <div class="radio-button-container">
+                        <div>
+                            <div>Read</div>
+                            <input type="radio" id="read-status-read" name="readStatus" value="Read" required>
+                        </div>
+                        <div>
+                            <div>Not Read</div>
+                            <input type="radio" id="read-status-notread" name="readStatus" required>
+                        </div>
+                    </div>
                 </div>
                 <div class="formBtn"><button id="add-book-button" type="submit" form="my-form">Add Book</button></div>
             </div>
