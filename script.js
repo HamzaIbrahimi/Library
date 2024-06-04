@@ -74,7 +74,6 @@ function getInput() {
   title.value = '';
   author.value = '';
   pages.value = '';
-  readStatus.value= '';
 }
 
 form.addEventListener("submit", getInput);
