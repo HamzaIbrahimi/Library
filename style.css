@@ -167,7 +167,7 @@ hr {
     gap: 10px;
     padding: 0 5px;
     margin-top: 10px;
-    
+    position: relative;    
 }
 
 .books > div {
@@ -271,5 +271,31 @@ input::-webkit-inner-spin-button {
 }
 
 .radio-button-container > div {
-    font-family: robot thin;
+    font-family: 'Roboto Thin';
+}
+
+/* styling read status based on card */
+
+#read-status-data-read,
+#read-status-data-notread {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 5px;
+    color: #fff;
+    background: green;
+    background: 1px solid black;
+    border-radius: 12px;
+    border: 1px solid black;
+    font-family: 'Roboto Thin';
+    font-size: 70%;
+}
+
+#read-status-data-read:hover,
+#read-status-data-notread:hover {
+    border: 1px solid white;
+}
+
+#read-status-data-notread {
+    background: red;
 }
