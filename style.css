@@ -173,6 +173,7 @@ hr {
 .books > div {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     padding: 5px;
     align-items: center;
     border: 3px solid var(--400);
