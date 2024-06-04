@@ -69,6 +69,12 @@ function getInput() {
     readStatus.value
   );
   addBookToLibrary(newBook);
+
+  //reset form input after push to library
+  title.value = '';
+  author.value = '';
+  pages.value = '';
+  readStatus.value= '';
 }
 
 form.addEventListener("submit", getInput);
