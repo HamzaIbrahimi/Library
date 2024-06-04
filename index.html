@@ -33,9 +33,10 @@
         </div>
         <div class="wrapper-3f-column">
             <div class="addbook-section">
+                <button id="information-button">Get Library Info</button>
                 <div>Add a New Book by Clicking Here --></div>
-                <button id="open-dialog-box"><img src="logos/book-open-blank-variant-outline.svg" alt=""><img src="logos/plus.svg"
-                        alt="plus-icon"></button>
+                <button id="open-dialog-box"><img src="logos/book-open-blank-variant-outline.svg" alt=""><img
+                        src="logos/plus.svg" alt="plus-icon"></button>
             </div>
             <div class="mybooks-title">My Books</div>
             <hr>
@@ -64,7 +65,7 @@
                     <input type="number" id="pages" name="pages" min="1" max="2000" required>
                 </div>
                 <div>
-                    <label style="text-decoration: overline;"  for="readStatus">Read Status</label>
+                    <label style="text-decoration: overline;" for="readStatus">Read Status</label>
                     <div class="radio-button-container">
                         <div>
                             <div>Read</div>
@@ -79,6 +80,13 @@
                 <div class="formBtn"><button id="add-book-button" type="submit" form="my-form">Add Book</button></div>
             </div>
         </form>
+    </dialog>
+
+
+    <dialog id="information-box">
+        <div class="books-read"></div>
+        <div class="pages-read"></div>
+        <button id="info-close">close</button>
     </dialog>
 
 </body>
