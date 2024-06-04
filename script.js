@@ -67,8 +67,9 @@ function getInput () {
   const title = document.querySelector('#title');
   const author= document.querySelector('#author');
   const pages = document.querySelector('#pages');
+  const checkedRadio = document.querySelector('input[name= "readStatus"]:checked');
 
-  const newBook = new Book (title.value, author.value, pages.value);
+  const newBook = new Book (title.value, author.value, pages.value, checkedRadio);
   addBookToLibrary(newBook);
 }
 
@@ -107,18 +108,6 @@ function displayMyBooks () {
     tick$btn.setAttribute('class', 'tick-plus-button');
     book.appendChild(tick$btn);
     
-    //children of tick$btn
-    const tickBtn = document.createElement('button');
-    tickBtn.setAttribute('class', 'read');
-    tickBtn.textContent = 'Read';
-    tick$btn.appendChild(tickBtn);
-
-    const tickDiv = document.createElement('div');
-    tickDiv.setAttribute('id', 'tick');
-    tickDiv.textContent = '✓';
-    tick$btn.appendChild(tickDiv);
-
-    //back to child of Book/Card
     const BTNremove = document.createElement('button');
     BTNremove.setAttribute('class', 'remove');
     BTNremove.textContent = 'Remove';
@@ -127,6 +116,4 @@ function displayMyBooks () {
 };
 
 form.addEventListener('submit', displayMyBooks)
-
-
 
