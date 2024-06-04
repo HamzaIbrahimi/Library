@@ -157,3 +157,30 @@ function updateCardBasedOnReadStatus(myLibrary, book) {
     });
   };
 };
+
+//script to highlight information about books read and pages read
+
+const infoBtn = document.querySelector('#information-button');
+const informationBox = document.querySelector('#information-box')
+
+infoBtn.addEventListener('click', () => {
+  informationBox.showModal()
+  const booksInfo = document.querySelector('.books-read');
+  const pagesInfo = document.querySelector('.pages-read');
+  let total = 0;
+  let count = 0;
+  for(const page of myLibrary) {
+    if (page.readStatus == 'Read') {
+    count++;
+    total += +page.pages;
+    }
+  }
+  booksInfo.textContent = `You have ${count} read books in your library `;
+  pagesInfo.textContent = `You have read ${total} pages`;
+  
+})
+
+const infoBtnClose = document.querySelector('#info-close');
+infoBtnClose.addEventListener('click', () => {
+  informationBox.close()
+})
