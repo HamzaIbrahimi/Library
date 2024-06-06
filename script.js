@@ -184,3 +184,12 @@ const infoBtnClose = document.querySelector('#info-close');
 infoBtnClose.addEventListener('click', () => {
   informationBox.close()
 })
+
+
+//test examples
+const book1 = new Book("What What", "Derek Jefferson", "140", "Read");
+const book2 = new Book("Fight Club", "First Rule IS!!", "280", "notRead");
+const book3 = new Book("Borat", "High Five", "213", "Read");
+
+myLibrary.push(book1, book2, book3);
+displayMyBooks();
