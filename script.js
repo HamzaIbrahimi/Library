@@ -18,9 +18,19 @@ function addBookToLibrary(book) {
 books.addEventListener("click", (e) => {
   if (e.target && e.target.classList.contains("remove")) {
     const card = e.target.closest(".card");
+    let findTheCorrectCard;
+    for (const element of card.children) {
+      if (element.className === "title") {
+        findTheCorrectCard = element.textContent;
+      }
+    }
+    let cardTitle = findTheCorrectCard.slice(7);
+    let indexOfRemovedBook = myLibrary.findIndex(
+      (book) => book.title === cardTitle
+    );
     card.remove();
-    myLibrary.pop(); //reduce array length with each remove so that it does not double card creation on each iteration of our for loop
-  };
+    myLibrary.splice(indexOfRemovedBook, 1);
+  }
 });
 
 //Dialog box functionality
@@ -71,9 +81,9 @@ function getInput() {
   addBookToLibrary(newBook);
 
   //reset form input after push to library
-  title.value = '';
-  author.value = '';
-  pages.value = '';
+  title.value = "";
+  author.value = "";
+  pages.value = "";
 }
 
 form.addEventListener("submit", getInput);
@@ -114,8 +124,8 @@ function displayMyBooks() {
 
     //function using object value to show the read status and change status on click;
     updateCardBasedOnReadStatus(myBooks, book);
-  };
-};
+  }
+}
 
 form.addEventListener("submit", displayMyBooks);
 
@@ -136,7 +146,7 @@ function updateCardBasedOnReadStatus(myLibrary, book) {
         btn.textContent = "Read";
         btn.removeAttribute("id", "read-status-data-notread");
         btn.setAttribute("id", "read-status-data-read");
-      };
+      }
     });
   } else if (myLibrary.readStatus === "notRead") {
     const btn = document.createElement("button");
@@ -153,38 +163,36 @@ function updateCardBasedOnReadStatus(myLibrary, book) {
         btn.textContent = "Read";
         btn.removeAttribute("id", "read-status-data-notread");
         btn.setAttribute("id", "read-status-data-read");
-      };
+      }
     });
-  };
-};
+  }
+}
 
 //script to highlight information about books read and pages read
 
-const infoBtn = document.querySelector('#information-button');
-const informationBox = document.querySelector('#information-box')
+const infoBtn = document.querySelector("#information-button");
+const informationBox = document.querySelector("#information-box");
 
-infoBtn.addEventListener('click', () => {
-  informationBox.showModal()
-  const booksInfo = document.querySelector('.books-read');
-  const pagesInfo = document.querySelector('.pages-read');
+infoBtn.addEventListener("click", () => {
+  informationBox.showModal();
+  const booksInfo = document.querySelector(".books-read");
+  const pagesInfo = document.querySelector(".pages-read");
   let total = 0;
   let count = 0;
-  for(const page of myLibrary) {
-    if (page.readStatus == 'Read') {
-    count++;
-    total += +page.pages;
+  for (const page of myLibrary) {
+    if (page.readStatus == "Read") {
+      count++;
+      total += +page.pages;
     }
   }
   booksInfo.textContent = `You have ${count} read books in your library `;
   pagesInfo.textContent = `You have read ${total} pages`;
-  
-})
+});
 
-const infoBtnClose = document.querySelector('#info-close');
-infoBtnClose.addEventListener('click', () => {
-  informationBox.close()
-})
-
+const infoBtnClose = document.querySelector("#info-close");
+infoBtnClose.addEventListener("click", () => {
+  informationBox.close();
+});
 
 //test examples
 const book1 = new Book("What What", "Derek Jefferson", "140", "Read");
